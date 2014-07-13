@@ -1,0 +1,12 @@
+{
+  "name": "aquila",
+  "subdomain": "aquila",
+  "scripts": {
+    "start": "server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "ejs": "*"
+  }
+}
