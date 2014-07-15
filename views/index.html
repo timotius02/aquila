@@ -1,9 +1,44 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Welcome to Aquila</title>
-    <body>
-      <h1>Hello World!<h1>
-    </body>
-  </head>
+	<head>
+		<title>Aquila</title>
+		<script type="text/javascript" src="../javascripts/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/jquery.hammer.min.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/three.min.js"></script>
+
+		<script type="text/javascript" src="../javascripts/lib/THREEx.FullScreen.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/detector.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/stats.js"></script>
+
+		<script type="text/javascript" src="../javascripts/aquila.js"></script>
+		<script type="text/javascript" src="../javascripts/main.js"></script>
+
+		<!-- Oculus Code -->
+		<!--<script src="../javascripts/lib/OculusBridge.min.js"></script>-->
+		<!--<script src="../javascripts/lib/RiftCamera.js"></script>-->
+
+		<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+		<body>
+			<div id="aquila" style="">
+			</div>
+			<div class="controls">
+				<button class="fullscreen btn">
+					<span class="up icon">
+						&#8599;
+					</span>
+					<span class="down icon">
+						&#8601;
+					</span>
+				</button>
+			</div>
+
+			<script type="text/javascript">
+				init({
+					$target: $('#aquila'),
+					videoURL: '../videos/tour.mp4'
+				});
+			</script>
+		</body>
+	</head>
 </html>
