@@ -13,6 +13,12 @@
 	right: 0;
 }
 
+.controls2 {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
 .button {
 	position: top;
 	top: 0;
