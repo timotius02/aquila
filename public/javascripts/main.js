@@ -1,14 +1,14 @@
-(function(context) {
+(function(context){
 	var PAN_VELOCITY = 0.005;
 
-	// hold previous touch  center. Important for calculating the delta movement values
+	// Hold previous touch center. Important for calculating the delta movement values
 	var prevCenter;
 
-	// hammer and normal event listeners
+	// Hammer and normal events listeners
 	var listeners = {
 		hammer: {
 			tap: function() {
-				aquila.zoom(1);
+				aquila.zoom(0);
 			},
 			dragstart: function(e) {
 				prevCenter = e.gesture.center;
@@ -31,19 +31,20 @@
 		}
 	};
 
-	// assign initial listeners
+	// Assign initial listeners
 	var initControls = function() {
 		$.each(listeners.hammer, function(k, v) {
 			$('#aquila').hammer({
 				'prevent_default': true
 			}).on(k, v);
 		});
+
 		$('#aquila').on('mousewheel', listeners.mousewheel);
-		$('.fullscreen.btn').on('click', function() {
-			if (THREEx.FullScreen.activated()) {
+		$('.fullscreen.btn').on('click', function(){
+			if(THREEx.FullScreen.activated()) {
 				THREEx.FullScreen.cancel();
-				$('.fullscreen.btn .up').show();
-				$('.fullscreen.btn .down').hide();
+				$('.fullsceen.btn .up').show();
+				$('.fullsceen.btn .down').hide();
 			} else {
 				THREEx.FullScreen.request();
 				$('.fullscreen.btn .up').hide();
@@ -54,7 +55,7 @@
 
 	context.init = function(opts) {
 		$('.fullscreen.btn .down').hide();
-		$(window).on('resize', function() {
+		$(window).on('resize', function(){
 			var size = {
 				width: window.innerWidth,
 				height: window.innerHeight
@@ -64,7 +65,7 @@
 			aquila.resize(size);
 		});
 		aquila.init({
-			fov: 96,
+			fov:96,
 			width: opts.$target.width(),
 			height: opts.$target.height(),
 			videoURL: opts.videoURL,

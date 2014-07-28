@@ -1,12 +1,12 @@
 {
   "name": "aquila",
-  "subdomain": "aquila",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "start": "server.js"
   },
   "dependencies": {
     "express": "*",
-    "socket.io": "*",
     "ejs": "*"
   }
 }

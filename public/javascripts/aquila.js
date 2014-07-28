@@ -46,8 +46,6 @@
 
 	var camera;
 
-	// Stats object providing FPS information
-	//var stats = null;
 
 	var extend = function(target) {
 		for (var i = 1; i < arguments.length; i++) {

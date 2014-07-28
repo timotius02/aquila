@@ -1,28 +1,34 @@
-var express = require("express");
-var app = express();
-var socket = require('socket.io');
-var server = require('http').createServer(app).listen(process.env.PORT || 5000);
+var express = require('express');
+	routes = require('./routes');
+	user = require('./routes/user'),
+	http = require('http'),
+	path = require('path');
 
-app.use(express.static(__dirname + '/'));
+var app = express();
 
 var pub = __dirname + '/public';
+app.set('port', process.env.PORT || 3000);
 app.use(express.static(pub));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 app.set('view options', { layout: false });
-
 app.engine('.html', require('ejs').__express);
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(__dirname + '/'));
 
-// Routes
+// Routing for app
 app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Aquila'
-  });
+	res.render('index',{
+		title: 'Welcome to Project Aquila'
+	});
 });
 
-// Listening for any request
-var io = socket.listen(server);
+app.get('/app', function(req, res){
+	res.render('venue',{
+		title: 'Prototype 1.0'
+	});
+});
 
-console.log("Aquila server is up and running");
+http.createServer(app).listen(app.get('port'), function(){
+	console.log("Aquila server listening on port " + app.get('port'));
+});
