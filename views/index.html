@@ -13,6 +13,16 @@
 		<script type="text/javascript" src="../javascripts/aquila.js"></script>
 		<script type="text/javascript" src="../javascripts/main.js"></script>
 
+		<!-- Application Javascript -->
+		<script type="text/javascript" src="../javascripts/lib/config.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/environment.js"></script>
+		<script type="text/javascript" src="../javascripts/lib/logic.js"></script>
+
+		<!-- Oculus Development -->
+		<script type="text/javascript" src="../javascripts/oculus/oculusRiftEffect.js"></script>
+		<script type="text/javascript" src="../javascripts/oculus/OculusBridge.min.js"></script>
+		<script type="text/javascript" src="../javascripts/oculus/headTracking.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
 
 		<body>
@@ -34,6 +44,19 @@
 					$target: $('#aquila'),
 					videoURL: '../videos/show.mp4'
 				});
+			</script>
+
+			<script type="text/javascript">
+				function animate(){
+					Config.render();
+
+					requestAnimationFrame(function(){
+						animate();
+					});
+				}
+
+				Config.init();
+				animate();
 			</script>
 		</body>
 	</head>

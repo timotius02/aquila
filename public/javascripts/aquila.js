@@ -174,7 +174,7 @@
 		video.oncanplay = undefined;
 		video.currentTime = 0;
 		video.play();
-		video.volume = 1;
+		video.volume = 0;
 
 		initRenderer();
 
